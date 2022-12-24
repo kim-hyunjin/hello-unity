@@ -6,7 +6,7 @@ using System;
 public class TimeRecord : MonoBehaviour
 {
     public static float time = 0f;
-    bool updateTimer = false;
+    public static bool updateTimer = false;
 
     TMPro.TextMeshProUGUI textUI;
 
@@ -25,9 +25,19 @@ public class TimeRecord : MonoBehaviour
         
     }
 
+    public static string GetFormattedTime()
+    {
+        return TimeSpan.FromSeconds(time).ToString("mm\\:ss\\.fff");
+    }
+
+    public static void ResetTimer()
+    {
+        time = 0f;
+    }
+
     private void displayTime()
     {
         
-        textUI.text = TimeSpan.FromSeconds(time).ToString("mm\\:ss\\.fff");
+        textUI.text = GetFormattedTime();
     }
 }
