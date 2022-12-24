@@ -25,7 +25,7 @@ public class Delivery : MonoBehaviour
             pickUpPackage(other);
         }
 
-        if (other.tag == "Customer" && hasPackage)
+        if (other.tag == "Customer")
         {
             deliverToCustomer();
         }
